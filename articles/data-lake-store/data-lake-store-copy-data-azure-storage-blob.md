@@ -110,7 +110,7 @@ For example:
 
 ## Considerations for using AdlCopy
 
-* AdlCopy does not support copying data from sources that have more than 1000 files and folders collectively. An alternate approach would be to distribute the files/folders into different sub-folders and use the path to those sub-folders as the source instead.
+* AdlCopy, as of version 1.0.4, supports copying data from sources that have more than 1000's of files and folders collectively. If there are still any issues, an alternate approach would be to distribute the files/folders into different sub-folders and use the path to those sub-folders as the source instead.
 
 ## Next steps
 
