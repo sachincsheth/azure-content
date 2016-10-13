@@ -18,9 +18,11 @@
 
 # Use Azure Import-Export Service for offline copy of data to Data Lake Store
 
-In this article, you will learn about how to copy huge datasets (>200GB) into an Azure Data Lake Store using offline copy methods, like [Azure Import/Export Service](../storage/storage-import-export-service.md). Specifically, The file used as an example in this article is 339,420,860,416 bytes i.e. about 319GB on disk. Let's call this file 319GB.tsv.
-
 Azure Import/Export Service allows you to securely transfer large amounts of data to Azure blob storage by shipping hard disk drives to an Azure data center.
+
+In this article, you will learn about how to copy large datasets into an Azure Data Lake Store using offline copy methods, like [Azure Import/Export Service](../storage/storage-import-export-service.md). Specifically, The file used as an example in this article is about 319GB on disk. Let's call this file 319GB.tsv.
+
+
 
 ## Prerequisites
 
@@ -35,7 +37,7 @@ Before you begin this article, you must have the following:
 
 ## Preparing the data
 
-Before using the Import/Export Service, we must break the data file to be transferred **into copies that are less than 200GB** in size. This is because the import tool does not work with files greater than 200GB. To comply with this, in this tutorial we split the file into chunks of 100,000,000,000 bytes each. You can do this easily using [Cygwin](https://cygwin.com/install.html). Cygwin supports Linux command which allows the users to do this easily. For our case, we use the following command.
+Before using the Import/Export Service, we must break the data file to be transferred **into copies that are less than 200GB** in size. This is because the import tool does not work with files greater than 200GB. To comply with this, in this tutorial we split the file into chunks of 100GB bytes each. You can do this easily using [Cygwin](https://cygwin.com/install.html). Cygwin supports Linux command which allows the users to do this easily. For our case, we use the following command.
 
     split -b 100m 319GB.tsv
 
